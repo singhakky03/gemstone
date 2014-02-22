@@ -1,0 +1,32 @@
+<div class="jumbotron">
+	<table class="table table-striped">
+		<tr>
+			<th>Product Title</th>
+			<th>Quantity</th>
+			<th>Quality</th>
+			<th>Price</th>
+			<th>Size</th>
+			<th>Weight</th>
+			<th>Color</th>
+			<th>Description</th>
+			<th></th>
+			<th></th>
+		</tr>
+
+		<% @products.each do |product| %>
+			<tr>
+				<th><%= product.title %></th>
+				<th><%= product.quantity %></th>
+				<th><%= product.quality %></th>
+				<th><%= product.price %></th>
+				<th><%= product.size %></th>
+				<th><%= product.weight %></th>
+				<th><%= product.color %></th>
+				<th><%= truncate(product.description, length: 40) %></th>
+				<th><%= link_to "Delete", product_path(product),method: :delete, data:{confirm: 'Are you sure'} %></th>
+				<th><%= link_to "Edit", edit_product_path(product) %></th>
+
+			</tr>
+		<% end %>
+	</table>
+</div>
