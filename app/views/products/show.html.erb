@@ -1,3 +1,5 @@
+<%= render 'common/navbar' %>
+
 <h1>Products</h1>
 
 <%= @product.title %>
@@ -15,6 +17,7 @@
 <%= @product.color %>
 <br/>
 <%= @product.description %>
+<br/>
 <br/>
 <%= link_to "Edit", edit_product_path(@product), class:"btn btn-primary" %>
 <%= link_to "Delete", product_path(@product), method: :delete, data: {confirm: 'Are you Sure'}, class:'btn btn-default' %>
